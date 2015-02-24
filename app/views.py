@@ -5,3 +5,11 @@ from app import app
 def index():
     return render_template('index.html', title='index')
 
+@app.route('/index_canvas')
+def index_canvas():
+    return render_template('index_canvas.html', title='index_canvas')
+
+@app.route('/index_canvas_test')
+def index_canvas_test():
+    return render_template('index_canvas_test.html', title='index_canvas')
+
