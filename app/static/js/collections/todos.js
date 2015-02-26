@@ -1,4 +1,4 @@
-// js/collections/todo.js
+// js/collections/todos.js
 
 var app = app || {};
 
@@ -16,7 +16,7 @@ var TodoList = Backbone.Collection.extend({
     // loaded inside your page in order for this to work.
     // if testing in the console without this present, comment out the next line
     // to avoid running into an exception.
-    localStorage: new Backbone.LocalStorage('todos-backbone');
+    localStorage: new Backbone.LocalStorage('todos-backbone'),
 
     // Filter down the list of all todo items that are finished.
     completed: function() {
