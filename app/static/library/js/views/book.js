@@ -2,10 +2,14 @@
 
 var app = app || {};
 
-app.BookView = Backbone.view.extend({
+app.BookView = Backbone.View.extend({
     tagName: 'div',
     className: 'bookContainer',
     template: _.template( $('#bookTemplate').html() ),
+
+    events: {
+        'click .delete': 'deleteBook'
+    },
 
     render: function() {
         // this.el is what we defined in tagName, use $el to get access to 
@@ -13,5 +17,13 @@ app.BookView = Backbone.view.extend({
         this.$el.html( this.template( this.model.attributes ));
 
         return this;
+    },
+
+    deleteBook: function() {
+        // Delete Model
+        this.model.destroy();
+
+        // Delete View
+        this.remove();
     }
 });
