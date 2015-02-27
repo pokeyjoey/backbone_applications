@@ -5,6 +5,10 @@ from app import app
 def index():
     return render_template('index.html', title='index')
 
+@app.route('/library')
+def library():
+    return render_template('library/index.html', title='library')
+
 @app.route('/index_canvas')
 def index_canvas():
     return render_template('index_canvas.html', title='index_canvas')
